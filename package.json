@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ayumi Saito",
   "license": "ISC",
   "dependencies": {
     "moment": "^2.19.1"

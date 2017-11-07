@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var app = express();
 
@@ -33,16 +35,18 @@ var d = new Date(req* 1000),
     if(mm==11){ mm="November";}
     if(mm==12){ mm="December";}
 
-    time = mm + ' ' + dd + ', ' + yyyy;
+    var time = mm + ' ' + dd + ', ' + yyyy;
 
     console.log(time)
 //print out
 	res.send({ "unix": req, "natural" : time })
-} else {
+} else if(req.match(/\w{3,9}?\s\d{1,2}\,\s\d{1,4}/)) {
 	console.log(req)
 	var timeStamp = new Date(req).getTime() / 1000
 	console.log(timeStamp)
 	res.send({ "unix": timeStamp, "natural" : req })
+} else {
+	res.send({ "unix": null, "natural" : null})
 }
 })
 
