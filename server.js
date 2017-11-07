@@ -9,6 +9,13 @@ var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
+app.use('/public', express.static(process.cwd() + '/public'));
+
+// index.html
+app.get('/', (req,res) => {
+	res.sendFile(__dirname + '/views/index.html');
+})
+
 app.get('/:unix', (req, res)=>{
 	console.log("query" + req.params.unix);
 	console.log("unix" + Math.floor(new Date() / 1000)); 
