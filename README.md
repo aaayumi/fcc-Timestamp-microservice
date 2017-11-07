@@ -24,7 +24,7 @@ An API project from FreeCodeCamp. It is coded with node.js.
 
 Install locally.
 
-``` git clone ```
+``` git clone https://github.com/aaayumi/fcc-Timestamp-microservice.git ```
 
 ``` cd fcc-Timestamp-microservice ```
 
